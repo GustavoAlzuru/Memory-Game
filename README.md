@@ -14,3 +14,5 @@ A fun and interactive memory game built with React, where you match pairs of Pok
 - JavaScript: The programming language used for the game logic.
 - CSS: Styling the components and layout of the game.
 - Pokemon API: Fetches data to populate the cards with Pokemon images.
+
+Check out the live demo of the game [here](memory-game-gustavo-alzuru.netlify.app)
