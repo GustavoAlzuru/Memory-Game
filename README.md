@@ -15,4 +15,4 @@ A fun and interactive memory game built with React, where you match pairs of Pok
 - CSS: Styling the components and layout of the game.
 - Pokemon API: Fetches data to populate the cards with Pokemon images.
 
-Check out the live demo of the game [here](memory-game-gustavo-alzuru.netlify.app)
+Check out the live demo of the game [here](https://memory-game-gustavo-alzuru.netlify.app/)
