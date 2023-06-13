@@ -1,0 +1,37 @@
+.card-container{
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 0, 0, 0.671);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.card-container .img-pokemon{
+    position: absolute;
+    transition: all ease-in 0.2s;
+    transform: rotateY(90deg);
+}
+.flipped .img-pokemon{
+    transform: rotateY(0deg);
+    transition-delay: 0.2s;
+    background-color: rgb(174, 0, 255);
+}
+
+.img-pokemon, .img-pokeball{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-pokeball{
+    transition: all ease-in 0.2s;
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.747);
+}
+.flipped .img-pokeball{
+    transform: rotateY(90deg);
+    transition-delay: 0s;
+}

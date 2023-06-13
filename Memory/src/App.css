@@ -1,0 +1,29 @@
+.container{
+    max-width: 80%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 220px 220px 220px 220px;
+    margin: 20px auto;
+    gap: 10px;
+}
+@media screen and (max-width: 940px){
+    .container{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+.turns{
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.turns span{
+    font-size: 22px;
+}
+.button-container{
+    margin-top: 20px;
+    text-align: center;
+}
+body{
+    height: 100vh;
+    background-color: rgba(94, 36, 255, 0.363);
+}
