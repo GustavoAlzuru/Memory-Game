@@ -4,8 +4,10 @@ import { getData } from './services/data'
 import Card from './components/Card'
 import confetti from 'canvas-confetti'
 import Modal from './components/Modal'
+import Loading from './components/Loading'
 
 function App() {
+  const [loading, setLoading] = useState(true)
   const [data, setData] = useState([])
   const [turns, setTurns] = useState(0)
   const [disabled, setDisabled] = useState(false)
@@ -56,13 +58,18 @@ function App() {
         }, 1000);
       }
     }
-  }, [optionOne, optionTwo])
+  }, [optionOne, optionTwo, data])
 
   useEffect(() => {
     const getPokemon = async () => {
-      const result = await getData()
-      const sorted = result.sort(() => Math.random() - 0.5)
-      setData(sorted)
+      try{
+        const result = await getData()
+        const sorted = result.sort(() => Math.random() - 0.5)
+        if(sorted) setLoading(false)
+        setData(sorted)
+      }catch(err){
+        console.log(err)
+      }
     }
     getPokemon()
   }, [])
@@ -75,7 +82,7 @@ function App() {
           <span>Turns: <b>{turns}</b></span>
         </div>
         <div className='container'>
-          {data.map((pokemon, index) => (
+          {loading ? <Loading/> : data.map((pokemon, index) => (
             <Card 
             pokemon={pokemon} 
             key={index} 
@@ -84,6 +91,7 @@ function App() {
             disabled={disabled}
             />
           ))}
+          
         </div>
         <div className='button-container'>
           <button onClick={shuffleCards}>New Game</button>
