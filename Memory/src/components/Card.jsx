@@ -1,5 +1,6 @@
 import React from 'react';
 import './Card.css'
+import pokeball from '../images/pokeball.webp'
 const Card = ({ pokemon, compare, flipped, disabled }) => {
     
     const handleClick = () => {
@@ -12,7 +13,7 @@ const Card = ({ pokemon, compare, flipped, disabled }) => {
         <div className='card-container'>
             <div className={flipped ? 'flipped' : ''}>
                 <img src={pokemon?.image} alt="pokemon image" className='img-pokemon'/>
-                <img src='https://www.freepnglogos.com/uploads/pokeball-png/pokeball-alexa-style-blog-pokemon-inspired-charmander-daily-8.png' alt='pokeball' className='img-pokeball' onClick={handleClick}/>
+                <img src={pokeball} alt='pokeball' className='img-pokeball' onClick={handleClick}/>
             </div>
         </div>
     );
